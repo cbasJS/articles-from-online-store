@@ -71,7 +71,16 @@ module.exports.getCollections = async res => {
     const collection = db.collection('articles')
     collection.find({}).toArray(function(err, result) {
       try {
-        res.send(JSON.stringify(result))
+        const response = {
+          statusCode: 200,
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          },
+          body: JSON.stringify(result)
+        }
+
+        res.send(response)
+
         return
       } catch (e) {
         res.send({
