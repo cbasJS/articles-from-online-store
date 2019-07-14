@@ -1,0 +1,32 @@
+service: articles-from-online-store
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    port: 4000
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  createProduct:
+    handler: src/index.handler
+    events:
+      - http: 'POST /createProduct'
+  getProducts:
+    handler: src/index.handler
+    events:
+      - http: 'GET /getProducts'
+  updateProduct:
+    handler: src/index.handler
+    events:
+      - http: 'POST /updateProduct'
+  deletePoduct:
+    handler: src/index.handler
+    events:
+      - http: 'POST /deleteProduct'

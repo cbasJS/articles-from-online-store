@@ -1,0 +1,28 @@
+{
+  "name": "articles-from-online-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-server": "^2.6.9",
+    "apollo-server-express": "^2.6.9",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "graphql": "^14.4.2",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.6.4",
+    "serverless-http": "^2.0.2"
+  },
+  "devDependencies": {
+    "env-cmd": "^9.0.3",
+    "serverless-offline": "^5.7.3"
+  },
+  "scripts": {
+    "start": "env-cmd ./config/env.glob serverless offline start",
+    "deploy-staging": "env-cmd -f ./config/env.glob serverless --stage=staging deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
